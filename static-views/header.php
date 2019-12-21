@@ -27,12 +27,12 @@
             <header id="main-wrapper-bg"></header>
             <main class="container main-wrapper-content shadow">
                 <div class="row m-0">
-                    <div class="col-3 container-header pl-0">
+                    <div class="col-12 col-sm-3 container-header pl-0">
                         <a href="/">
                             <img src="/images/others/main-logotype.png" class="main-logotype"/>
                         </a>
                     </div>
-                    <div class="col-9 top-menu-wrapper pr-0">
+                    <div class="col-12 col-sm-9 top-menu-wrapper pr-0 pl-0 pr-md-0">
                         <div class="container menu-container">
                             <nav class="navbar navbar-expand-sm navbar-light bg-light d-flex justify-content-end">
                                 <ul class="navbar-nav">

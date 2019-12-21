@@ -157,22 +157,7 @@
 </div>
 
 <script type="text/javascript">
-    $(window).ready(function()
-    {
-        let priceMenu = $('.price-menu');
-        
-        priceMenu.on('click', function(e)
-        {
-            e = e || window.event;
-            e = $(e.target);
-            
-            if(e.hasClass('dropdown-item'))
-            {
-                $(this).find('.dropdown-toggle').text(e.text());
-                $(this).parent().find('.price').text(e.attr('data-currency-value'));
-            }
-        });
-    });
+    $(window).ready(function(){$(".price-menu").on("click",function(t){t=t||window.event,(t=$(t.target)).hasClass("dropdown-item")&&($(this).find(".dropdown-toggle").text(t.text()),$(this).parent().find(".price").text(t.attr("data-currency-value")))})});
 </script>
 
 <?include_once($_SERVER['DOCUMENT_ROOT'] . '/static-views/footer.php');?>

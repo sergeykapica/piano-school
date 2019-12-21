@@ -52,42 +52,7 @@
 </div>
 
 <script type="text/javascript">
-    $(window).ready(function()
-    {
-        var videoTitle = $('.video-title');
-        
-        videoTitle.each(function(i)
-        {
-            let currentItem = videoTitle.eq(i);
-            var cutCountSymbols = 33;
-            
-            if(currentItem.text().length > cutCountSymbols)
-            {
-                currentItem.text(currentItem.text().slice(0, cutCountSymbols) + '...');
-            }
-        });
-        
-        var exampleModalCenter = $('#exampleModalCenter');
-        
-        exampleModalCenter.on('show.bs.modal', function(e)
-        {
-            e = e || e.window;
-            var currentButton = $(e.relatedTarget);
-            let thisModalWindow = $(this);
-            var videoIframe = thisModalWindow.find('#video-area');
-            var videoTitle = thisModalWindow.find('#exampleModalLabel');
-            var videoDescription = thisModalWindow.find('#video-description');
-            var videoDate = thisModalWindow.find('#video-date');
-            
-            if(thisModalWindow[0] !== undefined && videoTitle !== undefined)
-            {
-                videoTitle.text(currentButton.attr('data-video-full-title'));
-                videoIframe.attr('src', 'https://www.youtube.com/embed/' + currentButton.attr('data-video-id'));
-                videoDescription.text(currentButton.attr('data-video-description'));
-                videoDate.text('Добавлено: ' + currentButton.attr('data-video-date'));
-            }
-        });
-    });
+    $(window).ready(function(){var t=$(".video-title");t.each(function(e){let d=t.eq(e);d.text().length>33&&d.text(d.text().slice(0,33)+"...")}),$("#exampleModalCenter").on("show.bs.modal",function(t){t=t||t.window;var e=$(t.relatedTarget);let d=$(this);var a=d.find("#video-area"),i=d.find("#exampleModalLabel"),o=d.find("#video-description"),n=d.find("#video-date");void 0!==d[0]&&void 0!==i&&(i.text(e.attr("data-video-full-title")),a.attr("src","https://www.youtube.com/embed/"+e.attr("data-video-id")),o.text(e.attr("data-video-description")),n.text("Добавлено: "+e.attr("data-video-date")))})});
 </script>
 
 <?include_once($_SERVER['DOCUMENT_ROOT'] . '/static-views/footer.php');?>

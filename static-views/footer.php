@@ -32,75 +32,7 @@
         <script type="text/javascript" src="/files/js/animation-methods.js"></script>
 
         <script type="text/javascript">
-            $(window).ready(function()
-            {
-                animationMethods.setHint($('.nav-item'));
-
-                var opportunitiesSymbols = [String.fromCharCode(9839), String.fromCharCode(9835), String.fromCharCode(9838), String.fromCharCode(9836), String.fromCharCode(9834), String.fromCharCode(9833), String.fromCharCode(9837), String.fromCharCode(9732)];
-
-                let opportunitiesItemIcons = $('.opportunities-item-icon');
-
-                opportunitiesItemIcons.each(function(i)
-                {
-                    if(opportunitiesSymbols[i] !== undefined)
-                    {
-                        opportunitiesItemIcons.eq(i).html(opportunitiesSymbols[i]);
-                    }
-                });
-
-                var toheaderButtonWrapper = $('.toheader-button-wrapper');
-                
-                toheaderButtonWrapper.on('click', function()
-                {
-                    $('html, body').animate({
-                        scrollTop: 0
-                    }, 300);
-                });
-                
-                var animateBlocks = $('.animate-block');
-                var animateBlockID = 0;
-                var windowClientHeight = document.documentElement.clientHeight || document.body.clientHeight;
-
-                function checkElementsPosition()
-                {
-                    var scrollTopPos = window.pageYOffset || document.documentElement.scrollTop;
-                    
-                    while(animateBlockID < animateBlocks.length)
-                    {
-                            if(animateBlocks.eq(animateBlockID).offset().top  <= ( scrollTopPos + windowClientHeight ))
-                            {
-                                animateBlocks.eq(animateBlockID).addClass('animation-active');
-                                
-                                animateBlockID++;
-                            }
-                            else
-                            {
-                                break;
-                            }
-                    }
-                }
-                
-                $(window).on('scroll', function()
-                {
-                    let currentScrollTrackPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-                    if(currentScrollTrackPosition > 0)
-                    {
-                        toheaderButtonWrapper.removeClass('fadeOut');
-                        toheaderButtonWrapper.addClass('fadeIn');
-                    }
-                    else
-                    {
-                        if(toheaderButtonWrapper.hasClass('fadeIn'))
-                        {
-                            toheaderButtonWrapper.removeClass('fadeIn');
-                            toheaderButtonWrapper.addClass('fadeOut');
-                        }
-                    }
-                    
-                    checkElementsPosition();
-                });
-            });
+            $(window).ready(function(){animationMethods.setHint($(".nav-item"));var o=[String.fromCharCode(9839),String.fromCharCode(9835),String.fromCharCode(9838),String.fromCharCode(9836),String.fromCharCode(9834),String.fromCharCode(9833),String.fromCharCode(9837),String.fromCharCode(9732)];let e=$(".opportunities-item-icon");e.each(function(t){void 0!==o[t]&&e.eq(t).html(o[t])});var t=$(".toheader-button-wrapper");t.on("click",function(){$("html, body").animate({scrollTop:0},300)});var n=$(".animate-block"),a=0,r=document.documentElement.clientHeight||document.body.clientHeight;$(window).on("scroll",function(){(window.pageYOffset||document.documentElement.scrollTop)>0?(t.removeClass("fadeOut"),t.addClass("fadeIn")):t.hasClass("fadeIn")&&(t.removeClass("fadeIn"),t.addClass("fadeOut")),function(){for(var o=window.pageYOffset||document.documentElement.scrollTop;a<n.length&&n.eq(a).offset().top<=o+r;)n.eq(a).addClass("animation-active"),a++}()})});
         </script>
     </body>
 </html>

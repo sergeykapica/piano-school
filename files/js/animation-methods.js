@@ -1,41 +1,4 @@
 (function()
 {
-    window.animationMethods =
-    {
-        setHint: function(thisItem, showStatus)
-        {
-            thisItem.hover(function(e)
-            {
-                let thisItem = $(this);
-
-                let hintElement = document.createElement('div');
-                hintElement.innerText = thisItem.attr('data-title');
-                hintElement.classList.add('hint');
-
-                thisItem.append(hintElement);
-
-                setTimeout(function()
-                {
-                    hintElement.classList.add('hint-open');
-                }, 10);
-            },
-            function()
-            {
-                let hintElement = thisItem.find('.hint');
-                        
-                hintElement.removeClass('hint-open');
-                hintElement.addClass('hint-close');
-            });
-
-            thisItem.on('transitionend', function()
-            {
-                var hintElement = $(this).find('.hint');
-
-                if(hintElement.hasClass('hint-close'))
-                {
-                    hintElement.remove();
-                }
-            });
-        }
-    };
+    window.animationMethods={setHint:function(t,n){t.hover(function(t){let n=$(this),i=document.createElement("div");i.innerText=n.attr("data-title"),i.classList.add("hint"),n.append(i),setTimeout(function(){i.classList.add("hint-open")},10)},function(){let n=t.find(".hint");n.removeClass("hint-open"),n.addClass("hint-close")}),t.on("transitionend",function(){var t=$(this).find(".hint");t.hasClass("hint-close")&&t.remove()})}};
 })();
