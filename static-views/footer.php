@@ -57,6 +57,29 @@
                     }, 300);
                 });
                 
+                var animateBlocks = $('.animate-block');
+                var animateBlockID = 0;
+                var windowClientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+                function checkElementsPosition()
+                {
+                    var scrollTopPos = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    while(animateBlockID < animateBlocks.length)
+                    {
+                            if(animateBlocks.eq(animateBlockID).offset().top  <= ( scrollTopPos + windowClientHeight ))
+                            {
+                                animateBlocks.eq(animateBlockID).addClass('animation-active');
+                                
+                                animateBlockID++;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                    }
+                }
+                
                 $(window).on('scroll', function()
                 {
                     let currentScrollTrackPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -74,6 +97,8 @@
                             toheaderButtonWrapper.addClass('fadeOut');
                         }
                     }
+                    
+                    checkElementsPosition();
                 });
             });
         </script>

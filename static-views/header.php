@@ -2,6 +2,7 @@
 <html itemscope itemtype="http://schema.org/WebPage" itemprop="inLanguage" lang="ru">
     <head>
         <meta charset="utf-8">
+        <link rel="shortcut icon" href="/images/others/favicon.png" type="image/png">
         
         <?if(isset($meta)):?>
             <?foreach($meta as $mName => $mValue):?>

@@ -38,6 +38,8 @@
                             <li itemprop="telephone">(044) 404-67-21</li>
                         </ol>
                     </p>
+                    <h5 class="card-title">График работы:</h5>
+                    <p class="card-text" itemprop="address">Пн-Пт 9:00-18:00</p>
                 </div>
             </div>
             <div class="col card card-country bg-info p-0 mb-4">
@@ -52,6 +54,8 @@
                             <li itemprop="telephone">(495) 408-76-12</li>
                         </ol>
                     </p>
+                    <h5 class="card-title">График работы:</h5>
+                    <p class="card-text" itemprop="address">Пн-Пт 9:00-18:00</p>
                     <div class="russia-flag-1"></div>
                     <div class="russia-flag-2"></div>
                 </div>
