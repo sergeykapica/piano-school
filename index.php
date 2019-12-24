@@ -93,40 +93,50 @@
         </div>
         <div class="row mt-3 mb-3 ml-0 mr-0 teachers-categories-wrapper">
             <div class="col">
-                <div class="card-deck">
-                    <div class="card increase">
-                        <div class="card-avatar teacher-1"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Игорь Яковлевич Крутой</h5>
-                            <p class="card-text">Преподаватель фортепиано</p>
+                <?if($teachersList !== false):?>
+                
+                    <?if(!empty($teachersList)):?>
+                
+                        <div class="card-deck">
+                
+                            <?foreach($teachersList as $teacher):?>
+
+                                    <div class="card increase">
+                                        <div class="card-avatar" style="background-image: url(<?=$teacher['IMAGE_URL'];?>);"></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?=$teacher['NAME'] . ' ' . $teacher['MIDDLE_NAME'] . ' ' . $teacher['LAST_NAME'];?></h5>
+                                            <p class="card-text"><?=$teacher['DIRECTION'];?></p>
+                                        </div>
+                                        <a href="<?=$teacher['REFERENCE_BIOGRAPHY'];?>" class="cover-link"></a>
+                                    </div>
+
+                            <?endforeach;?>
+                            
                         </div>
-                        <a href="https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%83%D1%82%D0%BE%D0%B9,_%D0%98%D0%B3%D0%BE%D1%80%D1%8C_%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%D0%B8%D1%87" class="cover-link"></a>
-                    </div>
-                    <div class="card increase">
-                        <div class="card-avatar teacher-2"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Юрий Михайлович Антонов</h5>
-                            <p class="card-text">Преподаватель фортепиано</p>
+                
+                    <?else:?>
+                
+                        <div class="row mt-3 mb-3">
+                            <div class="col">
+                                <div class="alert alert-dark" role="alert">
+                                    Список преподавателей пуст
+                                </div>
+                            </div>
                         </div>
-                        <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%BE%D0%B2,_%D0%AE%D1%80%D0%B8%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87" class="cover-link"></a>
-                    </div>
-                    <div class="card increase">
-                        <div class="card-avatar teacher-3"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Александра Николаевна Пахмутова</h5>
-                            <p class="card-text">Преподаватель фортепиано</p>
+                
+                    <?endif;?>
+                
+                 <?else:?>
+                
+                    <div class="row mt-3 mb-3">
+                        <div class="col">
+                            <div class="alert alert-danger" role="alert">
+                                При выводе списка преподавателей возникла ошибка
+                            </div>
                         </div>
-                        <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%85%D0%BC%D1%83%D1%82%D0%BE%D0%B2%D0%B0,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%B0_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%BD%D0%B0" class="cover-link"></a>
                     </div>
-                    <div class="card increase">
-                        <div class="card-avatar teacher-4"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Раймонд Вольдемарович Паулс</h5>
-                            <p class="card-text">Преподаватель фортепиано</p>
-                        </div>
-                        <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%83%D0%BB%D1%81,_%D0%A0%D0%B0%D0%B9%D0%BC%D0%BE%D0%BD%D0%B4_%D0%92%D0%BE%D0%BB%D1%8C%D0%B4%D0%B5%D0%BC%D0%B0%D1%80%D0%BE%D0%B2%D0%B8%D1%87" class="cover-link"></a>
-                    </div>
-                </div>
+                
+                <?endif;?>
             </div>
         </div>
     </div>
